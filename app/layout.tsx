@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { useState } from "react"
 import Header from "components/header"
 import MyIcon from "components/icon"
-// import Mark from "components/mark"
+import Mark from "components/mark"
 import "styles/global.css"
 import "styles/tailwind.css"
 import "react-quill/dist/quill.snow.css"
@@ -387,7 +387,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }`}
           >
             <div>
-              {/* {isOpen ? <Mark width={222} height={44} /> : <></>} */}
+              {isOpen ? <Mark width={222} height={44} /> : <></>}
               <Menu theme="light" className={`${isOpen ? "pt-4" : "pt-20"}`} mode="inline" items={items} />
             </div>
             <div>{plan}</div>
