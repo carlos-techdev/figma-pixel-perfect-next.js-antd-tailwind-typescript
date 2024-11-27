@@ -26,8 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
 
   let items: MenuItem[] = [],
-    plan = <></>
-  let header, sidebar
+    plan = <></>,
+    header,
+    sidebar
 
   const pathname = usePathname()
 
@@ -406,6 +407,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
 
   let side_class = ""
+
   if (pathname.includes("auth")) {
     side_class = ""
   } else {
