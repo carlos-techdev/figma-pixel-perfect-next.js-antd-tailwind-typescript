@@ -394,7 +394,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div
             className={`${
-              isOpen ? "-ml-2.5" : "-ml-[49px]"
+              isOpen ? "-ml-2.5" : "-ml-12"
             } z-10 mt-5 hidden size-5 cursor-pointer items-center justify-center bg-black md:flex`}
             onClick={toggleSidebar}
           >
