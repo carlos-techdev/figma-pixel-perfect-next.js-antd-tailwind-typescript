@@ -1,5 +1,3 @@
-"use client"
-
 import { UserOutlined } from "@ant-design/icons"
 import { Avatar, Tabs } from "antd"
 import type { TabsProps } from "antd"
