@@ -2,6 +2,7 @@ interface iconProps {
   stroke?: string
   fill?: string
 }
+
 export function LinkedIn({ stroke = "gray", fill = "gray" }: iconProps) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" stroke="gray" fill={fill} xmlns="http://www.w3.org/2000/svg">
