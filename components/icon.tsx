@@ -1,4 +1,3 @@
-"use client"
 import React, { ReactElement } from "react"
 
 export default function MyIcon(props: { type: string; className?: string; width?: number; height?: number }) {
@@ -101,8 +100,20 @@ export default function MyIcon(props: { type: string; className?: string; width?
   let svgs = (
     <div key="svg">
       <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13.5 8.5H2.5" className={props.className ? props.className : 'stroke-black' }  strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8 14V3" className={props.className ? props.className : 'stroke-black' } strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="M13.5 8.5H2.5"
+          className={props.className ? props.className : "stroke-black"}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8 14V3"
+          className={props.className ? props.className : "stroke-black"}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
 
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -316,7 +327,12 @@ export default function MyIcon(props: { type: string; className?: string; width?
         <path d="M13 6L8 11L3 6" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
 
-      <svg xmlns="http://www.w3.org/2000/svg" width={props.width ? props.width : "20"} height={props.height ? props.height : "20"} viewBox="-0.5 0 48 48">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={props.width ? props.width : "20"}
+        height={props.height ? props.height : "20"}
+        viewBox="-0.5 0 48 48"
+      >
         <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="Color-" transform="translate(-401.000000, -860.000000)">
             <g id="Google" transform="translate(401.000000, 860.000000)">
