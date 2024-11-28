@@ -1,5 +1,3 @@
-"use client"
-
 import { CaretRightOutlined } from "@ant-design/icons"
 import { Button, Collapse, Input, Modal, Segmented, Select, Tabs } from "antd"
 import type { CollapseProps, TabsProps } from "antd"

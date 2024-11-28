@@ -1,5 +1,3 @@
-"use client"
-
 import { Button, DatePicker, TimeRangePickerProps } from "antd"
 import dayjs from "dayjs"
 import customParseFormat from "dayjs/plugin/customParseFormat"
