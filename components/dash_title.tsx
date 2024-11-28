@@ -1,11 +1,9 @@
-"use client"
-
 import Image from "next/image"
 
 export default function DashTitle() {
   return (
     <div>
-      <div className="flex items-center space-x-2 text-[24px] leading-[28.8px] font-medium">
+      <div className="flex items-center space-x-2 text-[24px] font-medium leading-[28.8px]">
         <div>Welcome Brain!</div>
         <Image
           className="visible"
