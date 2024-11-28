@@ -2,6 +2,7 @@
 
 import { Button, Input, Modal, Select } from "antd"
 import { useContext, useEffect, useState } from "react"
+import { BarChart } from "components/chart"
 import DashTitle from "components/dash_title"
 import MyIcon from "components/icon"
 import MyRangePicker from "components/rangepicker"
@@ -71,7 +72,9 @@ const Dashboard = () => {
             />
           </div>
         </div>
-        <div>{/*  */}</div>
+        <div>
+          <BarChart />
+        </div>
       </div>
       <div className="mx-4 mt-4 rounded border bg-white p-4">
         <div className="mb-4 flex items-center justify-between">
