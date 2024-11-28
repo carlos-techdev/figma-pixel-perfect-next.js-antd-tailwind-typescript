@@ -1,4 +1,5 @@
 "use client"
+
 import { Button, Menu, MenuProps } from "antd"
 import { Inter } from "next/font/google"
 import Link from "next/link"
@@ -11,6 +12,7 @@ import "styles/global.css"
 import "styles/tailwind.css"
 import "react-quill/dist/quill.snow.css"
 import { HeaderProvider } from "context/main"
+
 type MenuItem = Required<MenuProps>["items"][number]
 
 const inter = Inter({
