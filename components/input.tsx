@@ -1,5 +1,3 @@
-"use client"
-
 import { Input } from "antd"
 import MyIcon from "components/icon"
 
