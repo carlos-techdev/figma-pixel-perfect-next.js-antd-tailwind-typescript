@@ -1,5 +1,3 @@
-"use client"
-
 import { UserAddOutlined, UserOutlined } from "@ant-design/icons"
 import { Avatar, Badge, Button } from "antd"
 import type { TableColumnsType } from "antd"
@@ -135,7 +133,7 @@ const columns: TableColumnsType<DataType> = [
     width: "25%",
     responsive: ["lg"],
     render: () => (
-      <div className="flex justify-center cursor-pointer hover:rounded-full hover:bg-gray-200">
+      <div className="flex cursor-pointer justify-center hover:rounded-full hover:bg-gray-200">
         <MyIcon type="three_dots" />
       </div>
     ),
