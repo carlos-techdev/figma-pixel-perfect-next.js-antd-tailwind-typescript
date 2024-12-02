@@ -1,9 +1,8 @@
-"use client"
-
 import { Button } from "antd"
 import type { TableColumnsType } from "antd"
 import MyIcon from "components/icon"
 import { MyTable } from "components/table"
+
 interface DataType {
   key: React.Key
   name: string
@@ -129,7 +128,7 @@ export default function Plan() {
         <p className="text-gray-500">We charge 1 credit per person for verified details</p>
         <p className="mt-4 text-[14px] font-semibold leading-6">Companies Enrichment</p>
         <div className="mt-4 flex flex-row-reverse items-center">
-        <p>You reached 18,750 Credits from 25,000 Enrichment Credits</p>
+          <p>You reached 18,750 Credits from 25,000 Enrichment Credits</p>
           <div className="grow text-[13px] leading-5 text-gray-500">
             <p>
               Companies Enrichment credits provide targeted access to millions of companies database based on key
@@ -149,9 +148,7 @@ export default function Plan() {
         </div>
         <div className="mt-4 flex items-center justify-between">
           <div className="text-[14px] font-semibold leading-6">Scarping Credits</div>
-          <Button className="bg-black text-white h-[26px] rounded-lg text-[12px] leading-[18px]">
-            Buy More
-          </Button>
+          <Button className="h-[26px] rounded-lg bg-black text-[12px] leading-[18px] text-white">Buy More</Button>
         </div>
         <div className="mt-7 flex flex-row-reverse items-center">
           <div className="text-sm">You reached 18,750 Credits from 25,000 Scraping Credits</div>
@@ -174,9 +171,7 @@ export default function Plan() {
           <div className="h-2 rounded-md bg-black"></div>
         </div>
         <div className="mt-4 text-right">
-          <Button className="bg-black text-white h-[26px] rounded-lg text-[12px] leading-[18px]">
-            Buy More
-          </Button>
+          <Button className="h-[26px] rounded-lg bg-black text-[12px] leading-[18px] text-white">Buy More</Button>
         </div>
       </div>
       <div className="flex justify-between pb-8 pt-4">
