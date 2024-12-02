@@ -943,7 +943,7 @@ export default function MyIcon(props: { type: string; className?: string; width?
             height="40"
             rx="20"
             fill="url(#pattern0_2258_21931)"
-            shape-rendering="crispEdges"
+            shapeRendering="crispEdges"
           />
         </g>
         <defs>
