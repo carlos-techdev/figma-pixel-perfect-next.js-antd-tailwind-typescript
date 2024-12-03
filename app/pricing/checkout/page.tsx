@@ -1,5 +1,3 @@
-"use client"
-
 import { Radio, Space } from "antd"
 import Info from "../info"
 import Payment from "../payment"
@@ -21,7 +19,7 @@ export default function Checkout() {
               <div className="rounded-xl border border-gray-300 px-8 py-1 text-lg">1</div>
             </div>
           </div>
-          <div className="flex items-center space-x-4 pt-8 text-[16px] leading-[19.2px] font-bold">
+          <div className="flex items-center space-x-4 pt-8 text-[16px] font-bold leading-[19.2px]">
             <p>Frequency</p>
             <Radio.Group defaultValue={1}>
               <Space size={2} direction="horizontal">
