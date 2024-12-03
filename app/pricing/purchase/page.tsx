@@ -1,5 +1,3 @@
-"use client"
-
 import { Button, Input, Switch } from "antd"
 import MyIcon from "components/icon"
 import Info from "../info"
