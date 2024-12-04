@@ -1,10 +1,7 @@
-"use client"
-
 import { UserOutlined } from "@ant-design/icons"
 import { Avatar, Button, Input, Select, Space, Switch, Upload } from "antd"
 import { btn_group } from "components/button"
 import CountrySelect from "components/CountrySelect"
-
 
 const phone_options = [
   {

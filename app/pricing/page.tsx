@@ -1,12 +1,10 @@
-"use client"
-
 import { Button, Segmented } from "antd"
 import MyIcon from "components/icon"
 
 export default function Pricing() {
   return (
     <div>
-      <div className="mx-auto px-2 md:px-0 max-w-3xl border-t py-[52px] text-center">
+      <div className="mx-auto max-w-3xl border-t px-2 py-[52px] text-center md:px-0">
         <p className="text-[48px] font-semibold leading-[60px]">Scalable plans for any team size</p>
         <p className="mt-6 text-[18px] leading-7 text-[#4b5563]">
           Unlock the power of scalability with our plans tailored to accommodate teams of any size, providing the
@@ -17,7 +15,7 @@ export default function Pricing() {
           defaultValue="monthly"
           options={[
             {
-              label: <div className="px-[14px] py-2 rounded-2xl">Monthly</div>,
+              label: <div className="rounded-2xl px-[14px] py-2">Monthly</div>,
               value: "monthly",
             },
             {

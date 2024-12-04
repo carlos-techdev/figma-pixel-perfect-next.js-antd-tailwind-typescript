@@ -1,5 +1,3 @@
-"use client"
-
 import { UserAddOutlined, UserOutlined } from "@ant-design/icons"
 import { Avatar, Badge, Button, Checkbox, Input, Modal, Select } from "antd"
 import type { TableColumnsType } from "antd"

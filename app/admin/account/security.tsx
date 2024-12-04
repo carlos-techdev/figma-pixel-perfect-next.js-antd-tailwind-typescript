@@ -1,5 +1,3 @@
-"use client"
-
 import { Button, Checkbox, Input, Modal } from "antd"
 import { useState } from "react"
 import { btn_group } from "components/button"
@@ -24,7 +22,7 @@ export default function Security() {
     <div>
       <div className="flex justify-between border-b pb-2">
         <div className="space-y-2">
-          <p className="text-[20px] leading-[27px] font-semibold">Security</p>
+          <p className="text-[20px] font-semibold leading-[27px]">Security</p>
           <p className="text-base text-[#666d80]">Manage your password</p>
         </div>
         {btn_group}
@@ -48,29 +46,52 @@ export default function Security() {
         </div>
       </div>
       <div className="flex items-center justify-between">
-        <div className="space-y-1 mt-[19px]">
+        <div className="mt-[19px] space-y-1">
           <p className="text-base font-semibold">Log out of all devices</p>
-          <p className="text-[14px] leading-[21px] text-[#727272]">Log out of all other active sessions on other devices besides this one.</p>
+          <p className="text-[14px] leading-[21px] text-[#727272]">
+            Log out of all other active sessions on other devices besides this one.
+          </p>
         </div>
-        <Button className="bg-[#f2f2f2] font-medium w-[75px] h-[37px] rounded text-[14px] leading-[21px]">Log out</Button>
+        <Button className="h-[37px] w-[75px] rounded bg-[#f2f2f2] text-[14px] font-medium leading-[21px]">
+          Log out
+        </Button>
       </div>
       <div className="mt-5 flex items-center justify-between">
         <div className="space-y-1">
           <p className="text-base font-medium text-[#af4b4b]">Delete my account</p>
-          <p className="text-[14px] leading-[21px] text-[#727272]">permanently delete the account and remove all your data</p>
+          <p className="text-[14px] leading-[21px] text-[#727272]">
+            permanently delete the account and remove all your data
+          </p>
         </div>
-        <Button className="bg-[#f2f2f2] font-medium w-[127px] h-[37px] rounded text-[14px] leading-[21px]" onClick={deleteAccount}>
+        <Button
+          className="h-[37px] w-[127px] rounded bg-[#f2f2f2] text-[14px] font-medium leading-[21px]"
+          onClick={deleteAccount}
+        >
           Delete Account
         </Button>
       </div>
-      <Modal centered open={isModalOpen} width={1056} onOk={handleOk} onCancel={handleCancel} footer={null} closable={false}>
+      <Modal
+        centered
+        open={isModalOpen}
+        width={1056}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={null}
+        closable={false}
+      >
         <div className="flex justify-between">
           <div className="text-base font-semibold">WARNING</div>
           <div className="space-x-2.5">
-            <Button className="w-[102px] h-[26px] rounded-lg text-[12px] leading-[18px] text-[#0d0d12] font-semibold" onClick={handleOk}>
+            <Button
+              className="h-[26px] w-[102px] rounded-lg text-[12px] font-semibold leading-[18px] text-[#0d0d12]"
+              onClick={handleOk}
+            >
               Cancel
             </Button>
-            <Button className="w-[124px] h-[26px] rounded-lg text-[12px] leading-[18px] text-white bg-[#ff4747]" onClick={handleOk}>
+            <Button
+              className="h-[26px] w-[124px] rounded-lg bg-[#ff4747] text-[12px] leading-[18px] text-white"
+              onClick={handleOk}
+            >
               Delete My Account
             </Button>
           </div>
@@ -87,7 +108,9 @@ export default function Security() {
           </p>
         </div>
         <div className="mt-4 pl-3">
-          <Checkbox><p className="text-sm text-[#1c1c1c]">I confirm that I want to delete my account</p></Checkbox>
+          <Checkbox>
+            <p className="text-sm text-[#1c1c1c]">I confirm that I want to delete my account</p>
+          </Checkbox>
         </div>
       </Modal>
     </div>

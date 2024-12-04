@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "antd"
 import MyIcon from "components/icon"
 

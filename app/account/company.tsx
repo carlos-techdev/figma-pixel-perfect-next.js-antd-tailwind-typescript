@@ -1,5 +1,3 @@
-"use client"
-
 import { Input } from "antd"
 import { btn_group } from "components/button"
 import CountrySelect from "components/CountrySelect"
