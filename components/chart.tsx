@@ -57,7 +57,6 @@ const customBarTooltip = (context: { chart: ChartJS; tooltip: any }) => {
   // Set content
   if (tooltip.body) {
     const titleLines = tooltip.title || []
-    console.log(tooltip)
     const bodyLines = tooltip.body.map((item: any) => item.lines)
 
     let innerHtml = "<thead>"
