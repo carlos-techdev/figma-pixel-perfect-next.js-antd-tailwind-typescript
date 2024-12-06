@@ -159,4 +159,49 @@ const BarChart = () => {
   )
 }
 
-export { BarChart }
+const BlackBarChart = () => {
+  const labels: string[] = []
+  for (let i = 0; i < 24; i++) {
+    labels.push("")
+  }
+  const chartData = {
+    labels: labels,
+    datasets: [
+      {
+        data: labels.map(() => Math.floor(Math.random() * 100) + 1),
+        backgroundColor: "black",
+      },
+    ],
+  }
+
+  const options = {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+        ticks: {
+          display: false,
+        },
+      },
+      y: {
+        display: false,
+        ticks: {
+          display: false,
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  }
+
+  return (
+    <div>
+      <Bar data={chartData} options={options} />
+    </div>
+  )
+}
+
+export { BarChart, BlackBarChart }
