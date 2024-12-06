@@ -12,7 +12,7 @@ import {
   Tooltip,
 } from "chart.js"
 import "chart.js/auto"
-import { Bar } from "react-chartjs-2"
+import { Bar, Line } from "react-chartjs-2"
 
 ChartJS.register(
   ArcElement,
@@ -82,6 +82,87 @@ const customBarTooltip = (context: { chart: ChartJS; tooltip: any }) => {
   let width = 242
   let height = 99
   tooltipEl.style.width = `${width}px`
+  tooltipEl.style.height = `${height}px`
+  tooltipEl.style.borderRadius = "8px"
+  tooltipEl.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+  tooltipEl.style.color = "white"
+  tooltipEl.style.opacity = "1"
+  tooltipEl.style.position = "absolute"
+  tooltipEl.style.left = position.left + window.scrollX + tooltip.caretX + "px"
+  tooltipEl.style.top = position.top + window.scrollY + tooltip.caretY + "px"
+  tooltipEl.style.padding = "auto"
+  tooltipEl.style.pointerEvents = "none"
+  tooltipEl.style.marginTop = `-${height + 1}px`
+}
+
+const customLineTooltip = (context: { chart: ChartJS; tooltip: any }) => {
+  const { chart, tooltip } = context
+  console.log(tooltip)
+
+  let tooltipEl = document.getElementById("chartjs-line-tooltip")
+
+  // Create tooltip element if it doesn't exist
+  if (!tooltipEl) {
+    tooltipEl = document.createElement("div")
+    tooltipEl.id = "chartjs-line-tooltip"
+    tooltipEl.innerHTML = "<table></table>"
+    document.body.appendChild(tooltipEl)
+  }
+
+  // Hide tooltip if opacity is 0
+  if (tooltip.opacity === 0) {
+    tooltipEl.style.opacity = "0"
+    return
+  }
+
+  // Set caret position
+  tooltipEl.classList.remove("above", "below", "no-transform")
+  if (tooltip.yAlign) {
+    tooltipEl.classList.add(tooltip.yAlign)
+  } else {
+    tooltipEl.classList.add("no-transform")
+  }
+
+  // Set content
+  if (tooltip.body) {
+    const titleLines = tooltip.title || []
+    console.log(tooltip)
+    const bodyLines = tooltip.body.map((item: any) => item.lines)
+
+    let innerHtml = "<thead>"
+
+    titleLines.forEach((title: any) => {
+      innerHtml += `<tr><td><p class='text-sm pl-3.5 pt-2.5 font-bold text-[#1d30d7]'>Active users</p></td></tr>`
+      innerHtml += `<tr><td><p class='text-[12px] pl-3.5 leading-[18px] font-medium text-[#454a54]'>${title} vs 27 June</p></td></tr>`
+    })
+    innerHtml += "</thead><tbody>"
+
+    bodyLines.forEach((body: any) => {
+      innerHtml += `<tr><td><div class='px-3.5 mt-4 flex items-center justify-between'><div class='flex items-center space-x-1'><div class='size-1 rounded-full bg-[#1d30d7]'></div><div class='text-[13px] leading-5 font-semibold text-[#3245ec]'>${body}</div></div><div class='text-[12px] leading-[18px] font-semibold text-[#454a54]'>Weekly Active Users</div></div></td></tr>`
+      innerHtml += `<tr><td><div class='px-3.5 flex items-center justify-between'><div class='flex items-center space-x-1'><svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2838_33220)">
+<path d="M10.3669 7.5L6.40853 3.54167L4.3252 5.625L1.2002 2.5" stroke="#DC3826" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.8667 7.5H10.3667V5" stroke="#DC3826" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_2838_33220">
+<rect width="10" height="10" fill="white" transform="translate(0.783447)"/>
+</clipPath>
+</defs>
+</svg><p class='text-[13px] leading-5 font-semibold text-[#dc3826]'>- 8.08%</p>
+</div><p class='text-[12px] leading-[18px] font-semibold text-[#454a54]'>From last week</p></div></td></tr>`
+    })
+    innerHtml += "</tbody>"
+
+    const tableRoot = tooltipEl.querySelector("table")
+    if (tableRoot) {
+      tableRoot.innerHTML = innerHtml
+    }
+  }
+
+  // Set tooltip position
+  const position = chart.canvas.getBoundingClientRect()
+  let height = 119
   tooltipEl.style.height = `${height}px`
   tooltipEl.style.borderRadius = "8px"
   tooltipEl.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
@@ -202,6 +283,56 @@ const BlackBarChart = () => {
       <Bar data={chartData} options={options} />
     </div>
   )
+}
+
+const LineChart = () => {
+  const labels = ["02 Feb", "03 Mar", "04 Apr", "05 May", "06 June", "07 Jul", "08 Aug"]
+  const chartData = {
+    labels: labels,
+    datasets: [
+      {
+        data: labels.map(() => Math.floor(Math.random() * 4000) + 1),
+        borderColor: "black",
+      },
+      {
+        data: labels.map(() => Math.floor(Math.random() * 4000) + 1),
+        borderDash: [5, 5],
+        borderColor: "black",
+      },
+    ],
+  }
+
+  const options = {
+    maintainAspectRatio: false,
+    plugins: {
+      responsive: true,
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        enabled: false,
+        external: customLineTooltip,
+      },
+    },
+    responsive: true,
+    scales: {
+      x: {
+        stacked: true,
+        grid: {
+          display: false,
+        },
+      },
+      y: {
+        min: 0,
+        max: 4000,
+        ticks: {
+          stepSize: 1000,
+        },
+      },
+    },
+  }
+
+  return <Line height="271px" data={chartData} options={options} />
 }
 
 export { BarChart, BlackBarChart }
