@@ -12,7 +12,7 @@ import {
   Tooltip,
 } from "chart.js"
 import "chart.js/auto"
-import { Bar, Line } from "react-chartjs-2"
+import { Bar, Doughnut, Line } from "react-chartjs-2"
 
 ChartJS.register(
   ArcElement,
@@ -335,4 +335,92 @@ const LineChart = () => {
   return <Line height="271px" data={chartData} options={options} />
 }
 
-export { BarChart, BlackBarChart }
+const DoughnutChart = () => {
+  let data = [
+    {
+      label: "Direct",
+      value: 35,
+      color: "#6d6d74",
+      cutout: "65%",
+    },
+    {
+      label: "Organic",
+      value: 35,
+      color: "black",
+      cutout: "65%",
+    },
+    {
+      label: "Referral",
+      value: 10,
+      color: "#eaff00",
+      cutout: "65%",
+    },
+    {
+      label: "Social",
+      value: 20,
+      color: "#f2f2f2",
+      cutout: "65%",
+    },
+  ]
+
+  const options: any = {
+    plugins: {
+      responsive: true,
+      legend: {
+        display: true,
+        position: "bottom",
+        labels: {
+          padding: 26,
+          boxWidth: 10,
+          boxHeight: 10,
+        },
+      },
+      centerText: {
+        display: true,
+        text: "28.56k",
+        font: {
+          size: 36,
+          weight: "bold",
+        },
+      },
+    },
+    cutout: data.map((item) => item.cutout),
+  }
+
+  const centerTextPlugin = {
+    id: "centerText",
+    beforeDraw: (chart: any) => {
+      if (chart.config.options.plugins.centerText.display) {
+        const width = chart.width
+        const height = chart.height
+        const ctx = chart.ctx
+        ctx.restore()
+        ctx.textBaseline = "middle"
+        const { text, font } = chart.config.options.plugins.centerText
+        ctx.font = `${font.weight} ${font.size}px sans-serif`
+        const textX = Math.round((width - ctx.measureText(text).width) / 2)
+        const textY = height / 2 - 20
+
+        ctx.fillText(text, textX, textY)
+        ctx.save()
+      }
+    },
+  }
+
+  const finalData = {
+    labels: data.map((item) => item.label),
+    datasets: [
+      {
+        data: data.map((item) => Math.round(item.value)),
+        backgroundColor: data.map((item) => item.color),
+        borderColor: "white",
+        borderWidth: 2.45,
+        dataVisibility: new Array(data.length).fill(true),
+      },
+    ],
+  }
+
+  return <Doughnut data={finalData} options={options} plugins={[centerTextPlugin]} />
+}
+
+export { BarChart, BlackBarChart, DoughnutChart, LineChart }
