@@ -423,4 +423,48 @@ const DoughnutChart = () => {
   return <Doughnut data={finalData} options={options} plugins={[centerTextPlugin]} />
 }
 
-export { BarChart, BlackBarChart, DoughnutChart, LineChart }
+const HorizontalChart = () => {
+  const labels = ["United States", "Nertherlands", "Italy", "France", "Japan"]
+
+  const chartData = {
+    labels: labels,
+    datasets: [
+      {
+        data: labels.map(() => Math.floor(Math.random() * 100) + 1),
+        backgroundColor: "black",
+      },
+    ],
+  }
+
+  return (
+    <div>
+      <Bar
+        data={chartData}
+        options={{
+          indexAxis: "y",
+          elements: {
+            bar: {
+              borderWidth: 1,
+            },
+          },
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            x: {
+              display: false,
+              ticks: {
+                display: false,
+              },
+            },
+          },
+        }}
+      />
+    </div>
+  )
+}
+
+export { BarChart, BlackBarChart, DoughnutChart, HorizontalChart, LineChart }
