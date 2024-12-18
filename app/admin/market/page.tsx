@@ -2,7 +2,7 @@
 
 import { Tabs } from "antd"
 import type { TabsProps } from "antd"
-// import Dataset from './dataset/page'
+import Dataset from "./dataset/page"
 import Order from "./order"
 
 const items: TabsProps["items"] = [
@@ -14,7 +14,7 @@ const items: TabsProps["items"] = [
   {
     key: "2",
     label: "Dataset Marketplace",
-    // children: <Dataset />,
+    children: <Dataset />,
   },
 ]
 
