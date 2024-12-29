@@ -1,4 +1,5 @@
 "use client"
+
 import { UserOutlined } from "@ant-design/icons"
 import { Avatar, Button } from "antd"
 import type { TableColumnsType } from "antd"
@@ -8,6 +9,7 @@ import MyIcon from "components/icon"
 import MyInput from "components/input"
 import { MyTable } from "components/table"
 import { getStatusClass, getStatusString, InvoiceStatus } from "constant/Admin/Invoice"
+
 interface DataType {
   key: React.Key
   customer_name: string
@@ -18,6 +20,7 @@ interface DataType {
   amount: string
   action: string
 }
+
 const data: DataType[] = [
   {
     key: "1",
@@ -70,6 +73,7 @@ const data: DataType[] = [
     action: "",
   },
 ]
+
 const columns: TableColumnsType<DataType> = [
   {
     title: "Customer Name",
@@ -143,12 +147,17 @@ const columns: TableColumnsType<DataType> = [
     responsive: ["xl"],
     render: () => (
       <div className="flex items-center space-x-1">
-        <span className="cursor-pointer"><MyIcon type="edit_user" /></span>
-        <span className="cursor-pointer"><MyIcon type="trash_1" /></span>
+        <span className="cursor-pointer">
+          <MyIcon type="edit_user" />
+        </span>
+        <span className="cursor-pointer">
+          <MyIcon type="trash_1" />
+        </span>
       </div>
     ),
   },
 ]
+
 export default function InvoiceIndex() {
   const router = useRouter()
 
@@ -158,7 +167,7 @@ export default function InvoiceIndex() {
 
   return (
     <>
-      <div className="p-l-[12px] h-[69px] w-full border-y-[1px] border-[rgb(229,231,235)] py-[20px] text-[24px] font-bold leading-[120%] tracking-[0%]">
+      <div className="h-[69px] w-full border-y border-[rgb(229,231,235)] py-[20px] pl-[12px] text-[24px] font-bold leading-[120%] tracking-normal">
         Invoices
       </div>
       {/* Box */}
@@ -179,7 +188,7 @@ export default function InvoiceIndex() {
               <span>Filter</span>
             </div>
           </Button>
-          <div className=" w-[1px] border-l-[1px] border-solid border-gray-300"></div>
+          <div className=" border-l-px w-px border-solid border-gray-300"></div>
           <Button onClick={addInvoice} className="h-[37px] bg-black text-white">
             + New Invoice
           </Button>

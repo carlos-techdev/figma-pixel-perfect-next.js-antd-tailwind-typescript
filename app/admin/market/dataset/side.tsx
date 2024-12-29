@@ -1,3 +1,5 @@
+"use client"
+
 import { Button, Input, Modal } from "antd"
 import { useState } from "react"
 import MyIcon from "components/icon"
@@ -37,11 +39,17 @@ export default function MarketSidebar() {
       <div className="mt-3 space-y-1">
         {categories.map((category, id) =>
           id === 0 ? (
-            <div key={id} className="text-gray-[#a3a7b0] text-balck rounded px-2 py-[7.5px] text-[14px] font-medium leading-[21px] hover:bg-[#f2f2f2]">
+            <div
+              key={id}
+              className="text-gray-[#a3a7b0] text-balck rounded px-2 py-[7.5px] text-[14px] font-medium leading-[21px] hover:bg-[#f2f2f2]"
+            >
               {category}
             </div>
           ) : (
-            <div key={id} className="text-balck flex items-center justify-between rounded px-2 py-[7.5px] text-[14px] font-medium leading-[21px] hover:bg-[#f2f2f2]">
+            <div
+              key={id}
+              className="text-balck flex items-center justify-between rounded px-2 py-[7.5px] text-[14px] font-medium leading-[21px] hover:bg-[#f2f2f2]"
+            >
               <p>{category}</p>
               <div onClick={deleteCategory} className="cursor-pointer">
                 <MyIcon type="black_x" />
@@ -52,7 +60,7 @@ export default function MarketSidebar() {
       </div>
 
       <div
-        className="mt-7 flex items-center space-x-2 pl-2 text-[14px] font-medium leading-[21px] cursor-pointer"
+        className="mt-7 flex cursor-pointer items-center space-x-2 pl-2 text-[14px] font-medium leading-[21px]"
         onClick={addCategory}
       >
         <MyIcon type="plus" />

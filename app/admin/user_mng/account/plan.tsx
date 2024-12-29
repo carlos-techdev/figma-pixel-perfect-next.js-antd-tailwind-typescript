@@ -2,9 +2,9 @@
 
 import { Button } from "antd"
 import type { TableColumnsType } from "antd"
+import { btn_group } from "components/button"
 import MyIcon from "components/icon"
 import { MyTable } from "components/table"
-import { btn_group } from "components/button"
 interface DataType {
   key: React.Key
   name: string
@@ -133,7 +133,7 @@ export default function Plan() {
         <p className="text-gray-500">We charge 1 credit per person for verified details</p>
         <p className="mt-4 text-[14px] font-semibold leading-6">Companies Enrichment</p>
         <div className="mt-4 flex flex-row-reverse items-center">
-        <p>You reached 18,750 Credits from 25,000 Enrichment Credits</p>
+          <p>You reached 18,750 Credits from 25,000 Enrichment Credits</p>
           <div className="grow text-[13px] leading-5 text-gray-500">
             <p>
               Companies Enrichment credits provide targeted access to millions of companies database based on key
@@ -141,7 +141,6 @@ export default function Plan() {
             </p>
             <p className="text-gray-500">We charge 1 credit per verified company data</p>
           </div>
-          
         </div>
         <div className="mt-4 grid h-2 grid-cols-9 gap-2 rounded-md bg-gray-100">
           <div className="h-2 rounded-md bg-black"></div>

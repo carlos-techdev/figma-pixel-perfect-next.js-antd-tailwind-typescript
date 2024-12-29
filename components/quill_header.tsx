@@ -39,7 +39,7 @@ export const QuillHeader = () => (
   </div>
 )
 
-export const QuillHeader_1 = () => (
+export const QuillHeaderOne = () => (
   <div id="toolbar_1" className="mb-2 rounded border border-[#e4e4e4] p-2">
     <select className="ql-header" defaultValue="">
       <option value="1">Header 1</option>

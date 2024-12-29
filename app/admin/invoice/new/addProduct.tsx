@@ -4,6 +4,7 @@ interface ModalProps {
   ModalOpen: boolean
   ChangeStatus: (val: boolean) => void
 }
+
 export default function AddProductModal(props: ModalProps) {
   const handleOk = () => {
     props.ChangeStatus(false)
@@ -12,6 +13,7 @@ export default function AddProductModal(props: ModalProps) {
   const handleCancel = () => {
     props.ChangeStatus(false)
   }
+
   return (
     <Modal
       centered

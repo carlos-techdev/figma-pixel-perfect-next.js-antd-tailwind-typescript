@@ -1,3 +1,5 @@
+"use client"
+
 import { Pagination, Select } from "antd"
 import { useState } from "react"
 

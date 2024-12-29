@@ -37,8 +37,10 @@ export default function CountrySelect(props: CountrySelectProps) {
     <div style={{ display: "flex", alignItems: "center" }}>
       <Image
         src={`https://flagcdn.com/16x12/${value.toLowerCase()}.png`}
-        alt="img"
-        style={{ width: 20, marginRight: 10 }}
+        alt={`${label} flag`}
+        width={20}
+        height={15}
+        style={{ marginRight: 10 }}
       />
       {label}
     </div>

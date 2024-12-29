@@ -1,7 +1,7 @@
 import { Input } from "antd"
 import ReactQuill from "react-quill"
 import { btn_group } from "components/button"
-import { QuillHeader, QuillHeader_1 } from "components/quill_header"
+import { QuillHeaderOne } from "components/quill_header"
 import MyTag from "components/tag"
 
 const modules = {
@@ -33,9 +33,14 @@ export default function Description() {
       <p className="mt-7 text-base font-medium text-[#666d80]">Description Monthly Plan</p>
       <div className="mt-[34px] rounded border pb-4">
         <div className="px-6">
-          <ReactQuill theme="snow" defaultValue='fefe' modules={modules} className="h-[200px] overflow-y-auto rounded border-0 p-2" />
+          <ReactQuill
+            theme="snow"
+            defaultValue="fefe"
+            modules={modules}
+            className="h-[200px] overflow-y-auto rounded border-0 p-2"
+          />
           <div className="px-2">
-            <QuillHeader />
+            <QuillHeaderOne />
           </div>
           <div className="mt-20 px-2">
             <MyTag />
@@ -45,9 +50,14 @@ export default function Description() {
       <p className="mt-[19px] text-base font-medium text-[#666d80]">Description Annual Plan</p>
       <div className="mt-[34px] rounded border pb-4">
         <div className="px-6">
-          <ReactQuill theme="snow" defaultValue='frefefre' modules={modules_1} className="h-[200px] overflow-y-auto rounded border-0 p-2" />
+          <ReactQuill
+            theme="snow"
+            defaultValue="frefefre"
+            modules={modules_1}
+            className="h-[200px] overflow-y-auto rounded border-0 p-2"
+          />
           <div className="px-2">
-            <QuillHeader_1 />
+            <QuillHeaderOne />
           </div>
           <div className="mt-20 px-2">
             <MyTag />

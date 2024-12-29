@@ -1,9 +1,11 @@
+"use client"
+
 import { Button, Input, Switch } from "antd"
 import MyIcon from "components/icon"
 import Info from "../info"
 import Payment from "../payment"
 
-export default function Purchase() {
+const Purchase = () => {
   return (
     <div>
       <div className="border-y p-4 text-2xl font-semibold">Purchase Dataset</div>
@@ -57,3 +59,5 @@ export default function Purchase() {
     </div>
   )
 }
+
+export default Purchase

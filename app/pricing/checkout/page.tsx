@@ -1,8 +1,10 @@
+"use client"
+
 import { Radio, Space } from "antd"
 import Info from "../info"
 import Payment from "../payment"
 
-export default function Checkout() {
+const Checkout = () => {
   return (
     <div>
       <div className="border-y p-4 text-2xl font-semibold">Plan Builder</div>
@@ -58,3 +60,5 @@ export default function Checkout() {
     </div>
   )
 }
+
+export default Checkout

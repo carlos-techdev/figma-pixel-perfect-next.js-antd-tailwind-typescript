@@ -7,6 +7,7 @@ import { DROPZONE } from "constant/Admin/Invoice"
 import AddProductModal from "./addProduct"
 import { not_found_svg } from "./const"
 import * as C from "./const"
+
 export default function NewInvoice() {
   const [addProduct, setAddProduct] = useState(false)
   return (
